@@ -2,7 +2,7 @@
     position: relative;
     
 }
-input[type=number]{
+input[type=text]{
     width: 427px;
     height: 68px;
     margin: 0;
@@ -17,8 +17,8 @@ input[type=number]{
     padding-left: 24px;
 
 }
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type=text]::-webkit-outer-spin-button,
+input[type=text]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
