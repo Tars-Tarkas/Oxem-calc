@@ -1,7 +1,7 @@
 # Фронтенд-разработчик — Тестовое задание от Oxem Studio
 
 При выполнении задания приветствуется использование:
-— React/Vue
-— SASS/SCSS
-— Webpack
+* React/Vue
+* SASS/SCSS
+* Webpack
 
