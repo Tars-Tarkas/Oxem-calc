@@ -1,0 +1,39 @@
+.contribution{
+    &__inputs{
+        position: relative;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    &__title{
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #575757;
+        margin-bottom: 24px;
+        position: relative;
+    }
+    &__input-number{
+        position: relative;
+        &__icon{
+            display: flex;
+            font-family: 'Nekst';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 120%;
+            color: #575757;
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            background-color: #EBEBEC;
+            width: 69px;
+            height: 54px;            
+            border-radius: 16px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
+}

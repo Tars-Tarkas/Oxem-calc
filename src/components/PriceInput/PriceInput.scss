@@ -1,0 +1,32 @@
+.price{
+  &__inputs{
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  &__title{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #575757;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  &__input-number{
+    position: relative;  
+    width: 100%;  
+    &__icon{
+      font-family: 'Nekst';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 36px;
+      color: #575757;
+      position: absolute;
+      top: 12px;
+      right: 24px;
+    }
+  }
+}

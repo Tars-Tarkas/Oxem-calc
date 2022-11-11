@@ -1,9 +1,5 @@
-.input__block{
-    position: relative;
-    
-}
 input[type=text]{
-    width: 427px;
+    width: 427px;     
     height: 68px;
     margin: 0;
     background-color: #F3F3F4;
@@ -14,9 +10,43 @@ input[type=text]{
     font-weight: 900;
     font-size: 30px;
     line-height: 36px;
-    padding-left: 24px;
+    padding-left: 24px;      
+};
 
+input[type=text]:focus{
+  border: 2px solid #F3F3F4;
+  background-color: #fff;
 }
+input[type=text]:hover ~ input[type=range]::-webkit-slider-runnable-track{
+  height: 1px;
+}
+
+input[type=text]:hover ~ input[type=range]::-moz-range-track {
+  height: 1px;
+}
+
+input[type=text]:hover ~ input[type=range]::-ms-track {
+  height: 1px;
+}
+
+
+input[type=text]:hover ~ input[type=range]::-webkit-slider-thumb {
+  height: 24px;
+  width: 24px;
+  margin-top: -11px;
+}
+
+input[type=text]:hover ~ input[type=range]::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+}
+
+input[type=text]:hover ~ input[type=range]::-ms-thumb {
+  height: 24px;
+  width: 24px;
+}
+
+
 input[type=text]::-webkit-outer-spin-button,
 input[type=text]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -24,7 +54,7 @@ input[type=text]::-webkit-inner-spin-button {
 
 input[type=range]{
     -webkit-appearance: none;
-    width: 379px;
+    width: 90%;
     position: absolute;
     bottom: -2px;
     left: 22px;
@@ -37,10 +67,10 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
   background: #FF9514;
   cursor: pointer;
-  margin-top: -9px; /* Вы должны определить отступ в Chrome, но в Firefox и IE это делается автоматически */  
+  margin-top: -9px; 
 }
 
-/* Все то же самое для Firefox */
+
 input[type=range]::-moz-range-thumb {  
   height: 20px;
   width: 20px;
@@ -49,7 +79,7 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-/* Все то же самое для IE */
+
 input[type=range]::-ms-thumb { 
   height: 20px;
   width: 20px;

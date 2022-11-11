@@ -1,0 +1,90 @@
+@import './inputs.scss';
+
+.container{
+    margin: 0 auto;
+    max-width: 1440px;
+    padding-left: 47px;
+    padding-right: 47px;
+}
+
+.title{
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 90%;
+    color: #111111;
+    max-width: 750px;
+}
+
+.inputs{
+    margin-bottom: 52px;
+    &__block{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__contract{        
+        &__title{
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: #575757;
+            display: block;
+            margin-bottom: 10px;
+        }
+        &__sum{
+            font-family: 'Nekst';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 54px;
+            line-height: 90%;
+            color: #575757;
+        }
+    }
+    &__payment{
+        &__title{
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: #575757;
+            display: block;
+            margin-bottom: 10px;
+        }
+        &__sum{
+            font-family: 'Nekst';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 54px;
+            line-height: 90%;
+            color: #575757;
+        }
+    }
+}
+
+.btn{
+    background-color: #FF9514;
+    padding-left: 92.5px;
+    padding-right: 92.5px;
+    padding-top: 14px;
+    padding-bottom: 18px;
+    outline: none;
+    border: 0;
+    border-radius: 40px;
+    color: #fff;
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+}
