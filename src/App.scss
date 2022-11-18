@@ -1,90 +1,90 @@
 @import './inputs.scss';
 
+@function rem($px) {
+    @return ($px / 16)+rem;
+}
+
+// Main color
+$default-color: #111111;
+$primary-color: #FF9514;
+$success-color:#fff;
+$light-color: #575757;
+
+
 .container{
     margin: 0 auto;
-    max-width: 1440px;
-    padding-left: 47px;
-    padding-right: 47px;
+    max-width: rem(1440);
+    padding-left: rem(15);
+    padding-right: rem(15);
 }
 
 .title{
     font-family: 'Nekst';
     font-style: normal;
     font-weight: 900;
-    font-size: 54px;
+    font-size: rem(54);
     line-height: 90%;
-    color: #111111;
-    max-width: 750px;
+    color: $default-color;
+    max-width: rem(750);
+    margin-bottom: rem(31);
 }
-
+.calc-subtitle{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(16);
+    color: $light-color;
+    margin-bottom: rem(24);
+    position: relative;
+}
 .inputs{
     margin-bottom: 52px;
     &__block{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        gap: rem(32);
+        margin-bottom: rem(61);           
     }
 }
 
-.total{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    &__contract{        
-        &__title{
-            font-family: 'Gilroy';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 150%;
-            color: #575757;
-            display: block;
-            margin-bottom: 10px;
-        }
-        &__sum{
-            font-family: 'Nekst';
-            font-style: normal;
-            font-weight: 900;
-            font-size: 54px;
-            line-height: 90%;
-            color: #575757;
-        }
-    }
-    &__payment{
-        &__title{
-            font-family: 'Gilroy';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 150%;
-            color: #575757;
-            display: block;
-            margin-bottom: 10px;
-        }
-        &__sum{
-            font-family: 'Nekst';
-            font-style: normal;
-            font-weight: 900;
-            font-size: 54px;
-            line-height: 90%;
-            color: #575757;
-        }
+.input{
+    &__inner{
+        position: relative;
     }
 }
 
-.btn{
-    background-color: #FF9514;
-    padding-left: 92.5px;
-    padding-right: 92.5px;
-    padding-top: 14px;
-    padding-bottom: 18px;
-    outline: none;
-    border: 0;
-    border-radius: 40px;
-    color: #fff;
-    font-family: 'Nekst';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 30px;
-    line-height: 36px;
+.calc{
+    &__sum{
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: start;
+        gap: rem(32);
+        display: grid;       
+    }  
+    &__text{
+        font-family: 'Nekst';
+        font-style: normal;
+        font-weight: 900;
+        font-size: rem(54);
+        line-height: 90%;
+        color: $light-color;
+    }
+    &__btn{
+        background-color: $primary-color;
+        padding-left: rem(92.5);
+        padding-right: rem(92.5);
+        padding-top: rem(14);
+        padding-bottom: rem(18);
+        outline: none;
+        border: 0;
+        border-radius: 40px;
+        color: #fff;
+        font-family: 'Nekst';
+        font-style: normal;
+        font-weight: 900;
+        font-size: rem(30);
+        line-height: rem(36);
+    }    
 }
+
