@@ -1,0 +1,9 @@
+@function rem($px) {
+    @return ($px / 16)+rem;
+}
+
+// Main color
+$default-color: #111111;
+$primary-color: #FF9514;
+$success-color:#fff;
+$light-color: #575757;

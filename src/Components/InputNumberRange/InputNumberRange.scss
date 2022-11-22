@@ -1,0 +1,197 @@
+@import '../Calc/variable.scss';
+
+.input-block{
+    position: relative;
+}
+
+.input-title{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(16);
+    color: $light-color;
+    margin-bottom: rem(24);
+    position: relative;
+}
+
+.input-number{      
+      width: 100%;
+      height: rem(68);
+      margin: 0;
+      background-color: #F3F3F4;
+      border-radius: rem(16);
+      outline: none;
+      border: 0;
+      font-style: normal;
+      font-weight: 900;
+      font-size: rem(30);
+      line-height: rem(36);
+      padding-left: rem(24);          
+  };
+
+  .icon-money{
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    color: #575757;
+    position: absolute;
+    top: 12px;
+    right: 24px;
+  }
+  .icon-percent{
+    display: flex;
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 120%;
+    color: #575757;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    background-color: #EBEBEC;
+    width: 69px;
+    height: 54px;            
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input-number:focus{
+    border: rem(2) solid #F3F3F4;
+    background-color: #fff;
+  }
+  .input-number:hover ~ .input-range::-webkit-slider-runnable-track{
+    height: rem(1);
+  }
+  
+  .input-number:hover ~ .input-range::-moz-range-track {
+    height: rem(1);
+  }
+  
+  .input-number:hover ~ .input-range::-ms-track {
+    height: rem(1);
+  }
+  
+  
+  .input-number:hover ~ .input-range::-webkit-slider-thumb {
+    height: rem(24);
+    width: rem(24);
+    margin-top: rem(-11);
+  }
+  
+  .input-number:hover ~ .input-range::-moz-range-thumb {
+    height: rem(24);
+    width: rem(24);
+  }
+  
+  .input-number:hover ~ .input-range::-ms-thumb {
+    height: rem(24);
+    width: rem(24);
+  }
+  
+  
+  .input-number::-webkit-outer-spin-button,
+  .input-number::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+  }
+  
+  .input-range{
+      -webkit-appearance: none;    
+      position: absolute;
+      bottom: rem(-2);
+      left: rem(22);
+      right: rem(22);
+  }
+  
+  .input-range::-webkit-slider-thumb {
+    -webkit-appearance: none;  
+    height: rem(20);
+    width: rem(20);
+    border-radius: 50%;
+    background: $primary-color;
+    cursor: pointer;
+    margin-top: rem(-9); 
+  }
+  
+  
+  .input-range::-moz-range-thumb {  
+    height: rem(20);
+    width: rem(20);
+    border-radius: 50%;
+    background: $primary-color;
+    cursor: pointer;
+  }
+  
+  
+  .input-range::-ms-thumb { 
+    height: rem(20);
+    width: rem(20);
+    border-radius: 50%;
+    background: $primary-color;
+    cursor: pointer;
+  }
+  
+  .input-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: rem(2);
+    cursor: pointer; 
+    background: $primary-color; 
+  }
+  
+  .input-range:focus::-webkit-slider-runnable-track {
+    background: $primary-color;
+  }
+  
+  .input-range::-moz-range-track {
+    width: 100%;
+    height: rem(2);
+    cursor: pointer; 
+    background: $primary-color; 
+  }
+  
+  .input-range::-ms-track {
+    width: 100%;
+    height: rem(2);
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: rem(16) 0;
+    color: transparent;
+  }
+
+  .input-range::-ms-fill-lower {
+    background: $primary-color; 
+  }
+  
+  .input-range:focus::-ms-fill-lower {
+    background: $primary-color;
+  }
+  
+  .input-range::-ms-fill-upper {
+    background: $primary-color; 
+  }
+  
+  .input-range:focus::-ms-fill-upper {
+    background: $primary-color;
+  }
+
+
+  .input-range:hover::-webkit-slider-thumb {
+    height: rem(24);
+    width: rem(24);
+    margin-top: rem(-11);
+  }
+  
+  .input-range:hover::-moz-range-thumb {
+    height: rem(24);
+    width: rem(24);
+  }
+  
+  .input-range:hover::-ms-thumb {
+    height: rem(24);
+    width: rem(24);
+  }
