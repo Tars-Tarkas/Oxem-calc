@@ -1,12 +1,11 @@
 {
   "files": {
-    "main.css": "/Oxem-calc/static/css/main.5f028cae.css",
-    "main.js": "/Oxem-calc/static/js/main.cbe7ea8d.js",
+    "main.css": "/Oxem-calc/static/css/main.3cd067c2.css",
+    "main.js": "/Oxem-calc/static/js/main.373636d3.js",
     "static/js/787.73f4312c.chunk.js": "/Oxem-calc/static/js/787.73f4312c.chunk.js",
     "static/media/Nekst-Bold.eot": "/Oxem-calc/static/media/Nekst-Bold.753a7c4c084c718c0281.eot",
     "static/media/Nekst-Bold.ttf": "/Oxem-calc/static/media/Nekst-Bold.cab6338caaec418b8de9.ttf",
     "static/media/Nekst-SemiBold.eot": "/Oxem-calc/static/media/Nekst-SemiBold.533603ee27c76da054e7.eot",
-    "static/media/Nekst-SemiBold.ttf": "/Oxem-calc/static/media/Nekst-SemiBold.c921731d03bd659e3971.ttf",
     "static/media/Nekst-Black.eot": "/Oxem-calc/static/media/Nekst-Black.5fc4621c869412e7e801.eot",
     "static/media/Nekst-Black.ttf": "/Oxem-calc/static/media/Nekst-Black.dffaebf93d38d4c41536.ttf",
     "static/media/Nekst-Regular.eot": "/Oxem-calc/static/media/Nekst-Regular.900fc0b6325357408aa3.eot",
@@ -36,12 +35,13 @@
     "static/media/Gilroy-Regular.woff": "/Oxem-calc/static/media/Gilroy-Regular.ebe86c0337572553acea.woff",
     "static/media/Gilroy-Regular.woff2": "/Oxem-calc/static/media/Gilroy-Regular.f6c9931fabe5a6eb3307.woff2",
     "index.html": "/Oxem-calc/index.html",
-    "main.5f028cae.css.map": "/Oxem-calc/static/css/main.5f028cae.css.map",
-    "main.cbe7ea8d.js.map": "/Oxem-calc/static/js/main.cbe7ea8d.js.map",
+    "static/media/Nekst-SemiBold.ttf": "/Oxem-calc/static/media/Nekst-SemiBold.31d6cfe0d16ae931b73c.ttf",
+    "main.3cd067c2.css.map": "/Oxem-calc/static/css/main.3cd067c2.css.map",
+    "main.373636d3.js.map": "/Oxem-calc/static/js/main.373636d3.js.map",
     "787.73f4312c.chunk.js.map": "/Oxem-calc/static/js/787.73f4312c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f028cae.css",
-    "static/js/main.cbe7ea8d.js"
+    "static/css/main.3cd067c2.css",
+    "static/js/main.373636d3.js"
   ]
 }
