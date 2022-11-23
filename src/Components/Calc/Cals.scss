@@ -1,24 +1,60 @@
-@import './inputs.scss';
+@import './variable.scss';
 
-@function rem($px) {
-    @return ($px / 16)+rem;
+@mixin breakpoint($point) {
+    @if $point == lg{
+        @media (min-width: 1120px) and (max-width: 1439px){@content;}
+    }
+    @else if $point == md{
+        @media (min-width: 768px) and (max-width: 1119px){@content;}
+    }
+    @else if $point == sm{
+        @media (min-width: 320px) and (max-width: 767px){@content;}
+    }        
+    @else if $point == xl{
+        @media (min-width: 1440px){@content;}
+    }        
 }
 
-// Main color
-$default-color: #111111;
-$primary-color: #FF9514;
-$success-color:#fff;
-$light-color: #575757;
-
-
-.container{
+.container{  
     margin: 0 auto;
     max-width: rem(1440);
     padding-left: rem(15);
     padding-right: rem(15);
+    padding-top: rem(213);    
+    @include breakpoint(lg){
+        padding-top: rem(100);   
+    }
+    @include breakpoint(md){
+        padding-top: rem(64);   
+    }
+    @include breakpoint(sm){
+        padding-top: rem(44);   
+    }
 }
 
-.title{
+.input-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-bottom: rem(61);
+    gap: rem(30);   
+    @include breakpoint(md){
+        display: block;    
+    }
+    @include breakpoint(sm){
+        display: block;  
+    } 
+}
+.input-block >div{
+    @include breakpoint(md){
+        margin-bottom: rem(32);  
+    }
+    @include breakpoint(sm){
+        margin-bottom: rem(32);
+    } 
+}
+
+.calc-title{
     font-family: 'Nekst';
     font-style: normal;
     font-weight: 900;
@@ -27,7 +63,32 @@ $light-color: #575757;
     color: $default-color;
     max-width: rem(750);
     margin-bottom: rem(31);
+    @include breakpoint(xs){
+       font-size: rem(34);
+    } 
 }
+
+.calc-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: start; 
+    align-items: end;
+    @include breakpoint(md){
+        grid-template-columns: 1fr 1fr;   
+    }
+    @include breakpoint(sm){
+        display: block;  
+    }    
+}
+.calc-block >div{
+    @include breakpoint(md){
+        margin-bottom: rem(32);  
+    }
+    @include breakpoint(sm){
+        margin-bottom: rem(32);
+    } 
+}
+
 .calc-subtitle{
     font-family: 'Gilroy';
     font-style: normal;
@@ -37,54 +98,37 @@ $light-color: #575757;
     color: $light-color;
     margin-bottom: rem(24);
     position: relative;
+    @include breakpoint(sm){
+        font-size: rem(14);
+        margin-bottom: rem(8);
+    } 
 }
-.inputs{
-    margin-bottom: 52px;
-    &__block{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
-        gap: rem(32);
-        margin-bottom: rem(61);           
-    }
+.calc-sum-text{
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: rem(54);
+    line-height: 90%;
+    color: $light-color;
 }
-
-.input{
-    &__inner{
-        position: relative;
-    }
-}
-
-.calc{
-    &__sum{
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: start;
-        gap: rem(32);
-        display: grid;       
-    }  
-    &__text{
-        font-family: 'Nekst';
-        font-style: normal;
-        font-weight: 900;
-        font-size: rem(54);
-        line-height: 90%;
-        color: $light-color;
-    }
-    &__btn{
-        background-color: $primary-color;
-        padding-left: rem(92.5);
-        padding-right: rem(92.5);
-        padding-top: rem(14);
-        padding-bottom: rem(18);
-        outline: none;
-        border: 0;
-        border-radius: 40px;
-        color: #fff;
-        font-family: 'Nekst';
-        font-style: normal;
-        font-weight: 900;
-        font-size: rem(30);
-        line-height: rem(36);
-    }    
+.calc-btn{  
+    width: rem(426);
+    height: rem(68);
+    background-color: $primary-color;
+    outline: none;
+    border: 0;
+    border-radius: 40px;
+    color: #fff;
+    font-family: 'Nekst';
+    font-style: normal;
+    font-weight: 900;
+    font-size: rem(30);
+    line-height: rem(36); 
+    @include breakpoint(sm){
+        width: rem(280);
+        height: rem(60);
+        font-size: rem(22);
+     }   
 }
 
+// @import './media.scss';

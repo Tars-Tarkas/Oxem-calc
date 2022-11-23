@@ -1,6 +1,19 @@
 @import '../Calc/variable.scss';
 
-.input-block{
+
+@mixin breakpoint($point) {
+  @if $point == lg{
+      @media (min-width: 1120px) and (max-width: 1439px){@content;}
+  }
+  @else if $point == md{
+      @media (min-width: 768px) and (max-width: 1119px){@content;}
+  }
+  @else if $point == sm{
+      @media (min-width: 320px) and (max-width: 767px){@content;}
+  }     
+}
+
+.input-item{
     position: relative;
 }
 
@@ -12,7 +25,11 @@
     line-height: rem(16);
     color: $light-color;
     margin-bottom: rem(24);
-    position: relative;
+    position: relative; 
+    @include breakpoint(sm){
+      font-size: rem(14);
+      margin-bottom: rem(8);
+  } 
 }
 
 .input-number{      

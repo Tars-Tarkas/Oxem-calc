@@ -3,36 +3,61 @@ import { useState } from "react";
 import './InputNumberRange.scss'
 
 
+const InputNumberRange=({titlecomponent, inputValue, title, iconsInput, max, min, maxRange, minRange, defaultValue})=>{
+    const [value, setValue] = useState(defaultValue)
 
-const InputNumberRange=({title, MinMax, iconsInput}, carCoastValue)=>{
-    const [value, setValue] = useState('0')
+    const handleInputChange=(e)=>{        
+        const number = e.target.value.replace(/\s/g, "")
+        setValue(number);
+        inputValue(number)
+    }   
+    
+    let maxInput;
+    let minInput;
+    
+    switch(titlecomponent){
+        case 'car_coast':
+            maxInput = max
+            minInput = min
+        break
+        case 'initial':
+            maxInput = maxRange
+            minInput = minRange
+        break
+        case 'monthPay':
+            maxInput = max
+            minInput = min
+        break
+        default: 
+        maxInput = max
+        minInput = min       
+    }
 
-    const handleInputChange=(e)=>{
-        carCoastValue(value);
-        setValue(e.target.value.replace(/\s/g, ""));
-    }    
+   
     
     return (
         <div className='input'>
             <h4 className="input-title">{title}</h4>
-            <div className="input-block">
+            <div className="input-item">
                 <input 
                     type='text'                 
                     onKeyPress={(e) => {
                       if (!/[0-9]/.test(e.key)) {
                         e.preventDefault();
-                      }}}                    
-                    maxLength={MinMax.maxValue.length+1}
+                      }}}              
+                    minLength={minInput}      
+                    maxLength={maxInput}
                     onChange={(e) => handleInputChange(e)}
-                    value={value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}                    
+                    value={value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}                                                      
+                    // value={value}  
                     className='input-number'
                 />     
                 <span className={!null || !iconsInput.percent ? 'icon-money' : 'icon-percent'}>{iconsInput}</span>       
                   
                 <input 
                     type='range' 
-                    min={MinMax.minValue}
-                    max={MinMax.maxValue}
+                    min={minInput}
+                    max={maxInput}
                     onChange={(e) => handleInputChange(e)}                     
                     value={value}
                     className='input-range'
@@ -40,10 +65,11 @@ const InputNumberRange=({title, MinMax, iconsInput}, carCoastValue)=>{
             </div>
         </div>
     )
-    InputNumberRange.displayName = {title};
+    
 
 }
 
 
+InputNumberRange.displayName = {};
 
 export default InputNumberRange;
