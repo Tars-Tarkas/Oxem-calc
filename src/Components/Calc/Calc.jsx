@@ -34,14 +34,16 @@ const defaultValues={
   defaultMonth: '60'
 }
 
+const urlPost = 'https://hookb.in/wNzyPR2WLJTqWVaqDVYZ';
+
 const getTotalSum=()=> {
   let total_sum={
-    car_coast: defaultValues.defaulCarCoast,
-    initial_payment: defaultValues.defaultInitial,
-    initial_payment_percent: 0,
-    lease_term: defaultValues.defaultMonth,
-    total_sum: 0,
-    monthly_payment_from: 0,     
+    'car_coast': defaultValues.defaulCarCoast,
+    'initial_payment': defaultValues.defaultInitial,
+    'initial_payment_percent': 0,
+    'lease_term': defaultValues.defaultMonth,
+    'total_sum': 0,
+    'monthly_payment_from': 0,     
   }
   return total_sum;
 }
@@ -84,11 +86,28 @@ function Calc() {
 
   const numSeparator = num => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
 
-  console.log(totalSum);
+  const handleSumbit=(e)=>{
+    e.preventDefault();    
+    fetch(urlPost, {
+      method: 'POST', 
+      body: JSON.stringify(totalSum),
+      headers: {                      
+        'Content-type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        
+      })
+      .catch((err) => {
+          console.log(err)
+        }) 
+  }
 
   return (
     <div className='container'>      
-      <form>
+      <form onSubmit={e=>handleSumbit(e)}>
         <h1 className='calc-title'>Рассчитайте стоимость автомобиля в лизинг</h1>
         <div className='input-block'>
           <InputNumberRange inputValue={carCoastValue}
@@ -97,7 +116,7 @@ function Calc() {
                             min={minmaxCarCoast.minValue}
                             max={minmaxCarCoast.maxValue}
                             defaultValue={defaultValues.defaulCarCoast}
-                            iconsInput = {iconsInput.money} 
+                            iconsInput={iconsInput.money}                            
                             />
 
           <InputNumberRange inputValue={initialValue}
@@ -128,7 +147,12 @@ function Calc() {
             <span className='calc-sum-text'>{numSeparator(monthPay)}</span>
           </div>
           <div>
-            <button className='calc-btn'>Оставить заявку</button>  
+            <button className='calc-btn'>
+            Оставить заявку
+              <svg className="spinner" viewBox="0 0 50 50"> 
+              <circle className="path" cx="25" cy="25" r="20" fill="none" strokeWidth="2"></circle>
+              </svg>
+            </button>  
           </div>
         </div>
       </form>

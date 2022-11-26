@@ -17,7 +17,7 @@
     position: relative;
 }
 
-.input-title{
+.input-title{  
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
@@ -46,6 +46,12 @@
       line-height: rem(36);
       padding-left: rem(24);          
   };
+
+  // .input-number:hover,
+  // .input-number:disabled:active,
+  // .input-number:disabled:focus {
+  //   pointer-events: none;
+  // }
 
   .icon-money{
     font-family: 'Nekst';
@@ -81,31 +87,31 @@
     border: rem(2) solid #F3F3F4;
     background-color: #fff;
   }
-  .input-number:hover ~ .input-range::-webkit-slider-runnable-track{
+  .input-number:hover:not([disabled]) ~ .input-range::-webkit-slider-runnable-track{
     height: rem(1);
   }
   
-  .input-number:hover ~ .input-range::-moz-range-track {
+  .input-number:hover:not([disabled]) ~ .input-range::-moz-range-track {
     height: rem(1);
   }
   
-  .input-number:hover ~ .input-range::-ms-track {
+  .input-number:hover:not([disabled]) ~ .input-range::-ms-track {
     height: rem(1);
   }
   
   
-  .input-number:hover ~ .input-range::-webkit-slider-thumb {
+  .input-number:hover:not([disabled]) ~ .input-range::-webkit-slider-thumb {
     height: rem(24);
     width: rem(24);
     margin-top: rem(-11);
   }
   
-  .input-number:hover ~ .input-range::-moz-range-thumb {
+  .input-number:hover:not([disabled]) ~ .input-range::-moz-range-thumb {
     height: rem(24);
     width: rem(24);
   }
   
-  .input-number:hover ~ .input-range::-ms-thumb {
+  .input-number:hover:not([disabled]) ~ .input-range::-ms-thumb {
     height: rem(24);
     width: rem(24);
   }
@@ -197,18 +203,18 @@
   }
 
 
-  .input-range:hover::-webkit-slider-thumb {
+  .input-range:hover:not([disabled])::-webkit-slider-thumb {
     height: rem(24);
     width: rem(24);
     margin-top: rem(-11);
   }
   
-  .input-range:hover::-moz-range-thumb {
+  .input-range:hover:not([disabled])::-moz-range-thumb {
     height: rem(24);
     width: rem(24);
   }
   
-  .input-range:hover::-ms-thumb {
+  .input-range:hover:not([disabled])::-ms-thumb {
     height: rem(24);
     width: rem(24);
   }

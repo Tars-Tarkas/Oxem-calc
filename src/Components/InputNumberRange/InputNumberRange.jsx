@@ -40,7 +40,8 @@ const InputNumberRange=({titlecomponent, inputValue, title, iconsInput, max, min
             <h4 className="input-title">{title}</h4>
             <div className="input-item">
                 <input 
-                    type='text'                 
+                    type='text' 
+                    disabled=''                                    
                     onKeyPress={(e) => {
                       if (!/[0-9]/.test(e.key)) {
                         e.preventDefault();
@@ -56,6 +57,7 @@ const InputNumberRange=({titlecomponent, inputValue, title, iconsInput, max, min
                   
                 <input 
                     type='range' 
+                    disabled='' 
                     min={minInput}
                     max={maxInput}
                     onChange={(e) => handleInputChange(e)}                     
