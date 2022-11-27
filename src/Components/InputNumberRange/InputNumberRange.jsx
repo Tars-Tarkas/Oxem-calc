@@ -3,75 +3,54 @@ import { useState } from "react";
 import './InputNumberRange.scss'
 
 
-const InputNumberRange=({titlecomponent, inputValue, title, iconsInput, max, min, maxRange, minRange, defaultValue})=>{
+const InputNumberRange=({inputValue, title, iconsInput, max, min, defaultValue, isLoading})=>{
     const [value, setValue] = useState(defaultValue)
 
     const handleInputChange=(e)=>{        
         const number = e.target.value.replace(/\s/g, "")
-        setValue(number);
-        inputValue(number)
-    }   
-    
-    let maxInput;
-    let minInput;
-    
-    switch(titlecomponent){
-        case 'car_coast':
-            maxInput = max
-            minInput = min
-        break
-        case 'initial':
-            maxInput = maxRange
-            minInput = minRange
-        break
-        case 'monthPay':
-            maxInput = max
-            minInput = min
-        break
-        default: 
-        maxInput = max
-        minInput = min       
-    }
-
-   
-    
+        setValue(parseInt(number));
+        inputValue(parseInt(number)) 
+    }           
+    const numSeparator = num => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     return (
         <div className='input'>
             <h4 className="input-title">{title}</h4>
-            <div className="input-item">
+            <div className={isLoading 
+                                ? 'input-item__deactiv' 
+                                : 'input-item'}>
                 <input 
                     type='text' 
-                    disabled=''                                    
+                    disabled={isLoading ? 'disabled' : ''}                                                       
                     onKeyPress={(e) => {
                       if (!/[0-9]/.test(e.key)) {
                         e.preventDefault();
                       }}}              
-                    minLength={minInput}      
-                    maxLength={maxInput}
+                    minLength={numSeparator(min).length}
+                    maxLength={numSeparator(max).length}
                     onChange={(e) => handleInputChange(e)}
-                    value={value.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}                                                      
-                    // value={value}  
+                    value={numSeparator(value)}                       
                     className='input-number'
                 />     
-                <span className={!null || !iconsInput.percent ? 'icon-money' : 'icon-percent'}>{iconsInput}</span>       
-                  
+                <span className={(iconsInput ==='10%') 
+                                    ? 'icon-percent' 
+                                    : 'icon-money'}>
+                                    {iconsInput}
+                </span>
                 <input 
                     type='range' 
-                    disabled='' 
-                    min={minInput}
-                    max={maxInput}
+                    disabled={isLoading ? 'disabled' : ''}  
+                    min={min}
+                    max={max}
                     onChange={(e) => handleInputChange(e)}                     
                     value={value}
                     className='input-range'
                 />
             </div>
-        </div>
-    )
-    
-
+        </div>       
+    )  
 }
 
 
-InputNumberRange.displayName = {};
+
 
 export default InputNumberRange;

@@ -1,20 +1,10 @@
 @import '../Calc/variable.scss';
-
-
-@mixin breakpoint($point) {
-  @if $point == lg{
-      @media (min-width: 1120px) and (max-width: 1439px){@content;}
-  }
-  @else if $point == md{
-      @media (min-width: 768px) and (max-width: 1119px){@content;}
-  }
-  @else if $point == sm{
-      @media (min-width: 320px) and (max-width: 767px){@content;}
-  }     
-}
-
 .input-item{
     position: relative;
+    &__deactiv{
+      opacity: 0.4;
+      position: relative;
+    }
 }
 
 .input-title{  
@@ -29,7 +19,7 @@
     @include breakpoint(sm){
       font-size: rem(14);
       margin-bottom: rem(8);
-  } 
+    } 
 }
 
 .input-number{      
@@ -44,50 +34,64 @@
       font-weight: 900;
       font-size: rem(30);
       line-height: rem(36);
-      padding-left: rem(24);          
+      padding-left: rem(24);  
+      font-family: 'Nekst';
+      font-style: normal;
+      font-weight: 900;   
+      color: $light-color;
+      transition: all 0.3s ease; 
+      @include breakpoint(xs){
+        height: rem(60);
+        padding-left: rem(20);
+    }    
   };
-
-  // .input-number:hover,
-  // .input-number:disabled:active,
-  // .input-number:disabled:focus {
-  //   pointer-events: none;
-  // }
 
   .icon-money{
     font-family: 'Nekst';
     font-style: normal;
     font-weight: 900;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: rem(30);
+    line-height: rem(36);
     color: #575757;
     position: absolute;
-    top: 12px;
-    right: 24px;
+    top: rem(12);
+    right: rem(24);
+    @include breakpoint(sm){
+      font-size: rem(22);
+      top: rem(10);
+      right: rem(20);
+    } 
   }
   .icon-percent{
     display: flex;
     font-family: 'Nekst';
     font-style: normal;
     font-weight: 900;
-    font-size: 20px;
-    line-height: 120%;
+    font-size: rem(20);    
     color: #575757;
     position: absolute;
-    top: 7px;
-    right: 7px;
+    top: rem(7);
+    right: rem(7);
     background-color: #EBEBEC;
-    width: 69px;
-    height: 54px;            
-    border-radius: 16px;
+    width: rem(69);
+    height: rem(54);            
+    border-radius: rem(16);
     justify-content: center;
     align-items: center;
+    @include breakpoint(sm){
+      font-size: rem(22);
+      top: rem(7);
+      right: rem(7);
+      width: rem(67);
+     height: rem(48); 
+    } 
   }
   
   .input-number:focus{
     border: rem(2) solid #F3F3F4;
     background-color: #fff;
   }
-  .input-number:hover:not([disabled]) ~ .input-range::-webkit-slider-runnable-track{
+  .input-number:hover:not([disabled]) ~ .input-range::-webkit-slider-runnable-track{    
     height: rem(1);
   }
   
@@ -128,6 +132,7 @@
       bottom: rem(-2);
       left: rem(22);
       right: rem(22);
+      transition: all 0.3s ease;
   }
   
   .input-range::-webkit-slider-thumb {
@@ -138,6 +143,7 @@
     background: $primary-color;
     cursor: pointer;
     margin-top: rem(-9); 
+    transition: all 0.3s ease;
   }
   
   
@@ -147,6 +153,7 @@
     border-radius: 50%;
     background: $primary-color;
     cursor: pointer;
+    transition: all 0.3s ease;
   }
   
   
@@ -156,6 +163,7 @@
     border-radius: 50%;
     background: $primary-color;
     cursor: pointer;
+    transition: all 0.3s ease;
   }
   
   .input-range::-webkit-slider-runnable-track {
@@ -163,10 +171,12 @@
     height: rem(2);
     cursor: pointer; 
     background: $primary-color; 
+    transition: all 0.3s ease;
   }
   
   .input-range:focus::-webkit-slider-runnable-track {
     background: $primary-color;
+    
   }
   
   .input-range::-moz-range-track {
@@ -174,6 +184,7 @@
     height: rem(2);
     cursor: pointer; 
     background: $primary-color; 
+    transition: all 0.3s ease;
   }
   
   .input-range::-ms-track {
@@ -184,6 +195,7 @@
     border-color: transparent;
     border-width: rem(16) 0;
     color: transparent;
+    transition: all 0.3s ease;
   }
 
   .input-range::-ms-fill-lower {
@@ -192,6 +204,7 @@
   
   .input-range:focus::-ms-fill-lower {
     background: $primary-color;
+    
   }
   
   .input-range::-ms-fill-upper {
@@ -207,14 +220,17 @@
     height: rem(24);
     width: rem(24);
     margin-top: rem(-11);
+    transition: all 0.3s ease;
   }
   
   .input-range:hover:not([disabled])::-moz-range-thumb {
     height: rem(24);
     width: rem(24);
+    transition: all 0.3s ease;
   }
   
   .input-range:hover:not([disabled])::-ms-thumb {
     height: rem(24);
     width: rem(24);
+    transition: all 0.3s ease;
   }
