@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Oxem-calc/static/css/main.3d5a88ca.css",
-    "main.js": "/Oxem-calc/static/js/main.ae145da0.js",
+    "main.js": "/Oxem-calc/static/js/main.bbebca19.js",
     "static/js/787.73f4312c.chunk.js": "/Oxem-calc/static/js/787.73f4312c.chunk.js",
     "static/media/Nekst-Bold.eot": "/Oxem-calc/static/media/Nekst-Bold.753a7c4c084c718c0281.eot",
     "static/media/Nekst-Bold.ttf": "/Oxem-calc/static/media/Nekst-Bold.cab6338caaec418b8de9.ttf",
@@ -37,11 +37,11 @@
     "index.html": "/Oxem-calc/index.html",
     "static/media/Nekst-SemiBold.ttf": "/Oxem-calc/static/media/Nekst-SemiBold.31d6cfe0d16ae931b73c.ttf",
     "main.3d5a88ca.css.map": "/Oxem-calc/static/css/main.3d5a88ca.css.map",
-    "main.ae145da0.js.map": "/Oxem-calc/static/js/main.ae145da0.js.map",
+    "main.bbebca19.js.map": "/Oxem-calc/static/js/main.bbebca19.js.map",
     "787.73f4312c.chunk.js.map": "/Oxem-calc/static/js/787.73f4312c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3d5a88ca.css",
-    "static/js/main.ae145da0.js"
+    "static/js/main.bbebca19.js"
   ]
 }
